@@ -8,7 +8,8 @@
  */
 
 try {
-  module.exports = typeof XMLHttpRequest !== 'undefined' &&
+  module.exports = window.navigator.product === 'ReactNative' ||
+    typeof XMLHttpRequest !== 'undefined' &&
     'withCredentials' in new XMLHttpRequest();
 } catch (err) {
   // if XMLHttp support is disabled in IE then it will throw
